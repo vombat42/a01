@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+	<title>Andre's project 01 - Главная</title>
+	<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h2>Главная</h2>
+	<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+		<input type="submit" value="Отправить">
+	</form>
+	<img src="{% static "images/q.jpg" %}" alt="зимний лес" >
+	<p>Path: {{path}}</p>
+	<p>User-agent: {{user_agent}}</p>
+	<p>Host: {{host}}</p>
+	<p>Привет, {{name}}, твой возраст: {{age}}</p>
+	<p>reqmeth: {{rm}}</p>
+	<div><a href="{% url "hello:textanalysis" %}">Анализ текста</a></div>
+	<div><a href="{% url "knowhow:index" %}">Know How</a></div>
+	</body>
+</html>

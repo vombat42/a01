@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+	<title>{% block title %}Andre's project 01{% endblock title %}</title>
+	<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>{% block header %}Andre's project 01{% endblock header %}</h1>
+  <div>{% block content%}Andre's project 01{% endblock content %}</div>
+	<div><a href="{% url "hello:index" %}">На главную</a></div>
+</body>
+</html>

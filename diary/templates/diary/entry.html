@@ -1,0 +1,28 @@
+{% extends "diary/t_main_diary.html" %}
+
+{% block title %}Entry{% endblock title %}
+{% block header %}Entry{% endblock header %}
+{% load static %}
+
+{% block content %}
+
+{% verbatim %}
+<div class="container" id="api_entry">
+	<div v-for="entry in entrys">
+
+		<div class="btn btn-success btn-lg" >{{entry.chapter_name}}</div>
+		<br/>
+		<div class="btn btn-success btn-lg" >{{entry.user_name}}</div>
+		<br/>
+		<div class="btn btn-info btn-lg" >{{entry.date_start}}</div> 
+		<br/>
+		<div class="btn btn-warning btn-lg" >{{entry.text}}</div>
+		<hr/>
+		<hr/>
+		
+	</div>
+</div>
+{% endverbatim %}
+
+<script src='/static/diary/js/app.js'></script>
+{% endblock content %}

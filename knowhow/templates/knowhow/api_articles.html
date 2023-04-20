@@ -1,0 +1,26 @@
+{% extends "knowhow/t_knowhow.html" %}
+
+{% block title %}Articles Know How{% endblock title %}
+{% block header %}API Статьи{% endblock header %}
+{% load static %}
+
+{% block content %}
+
+{% verbatim %}
+<div class="container" id="api_articles">
+	<div v-for="a in art">
+
+		<div class="btn btn-success btn-lg" >{{a.name}}</div>
+		<br/>
+		<div class="btn btn-info btn-lg" >{{a.date}}</div> 
+		<br/>
+		<div class="btn btn-warning btn-lg" >{{a.text}}</div>
+		<hr/>
+		<hr/>
+		
+	</div>
+</div>
+{% endverbatim %}
+
+<script src='/static/knowhow/js/app.js'></script>
+{% endblock content %}

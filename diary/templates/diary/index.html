@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+	<title>DIARY</title>
+	<link rel="stylesheet" href="{% static "css/styles.css" %}"/>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h2>Diary</h2>
+	<hr />
+	<div><a href="{% url "diary:entry" %}">to Entry</a></div>
+	</body>
+</html>
