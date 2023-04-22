@@ -2,17 +2,26 @@ from rest_framework.serializers import ModelSerializer
 from diary.models import Entry, Chapter, Link
 from rest_framework import serializers
 
-class ChapterSerializer(ModelSerializer):
+
+#class ChapterSerializer(ModelSerializer):
+#	class Meta:
+#		model = Chapter
+#		fields = ['name']
+
+
+class LinkSerializer(ModelSerializer):
 	class Meta:
-		model = Chapter
-		fields = ['name']
+		model = Link
+		#fields = '__all__'
+		fields = ['link']
 
 
 class EntrySerializer(ModelSerializer):
 	chapter_name = serializers.CharField(source='chapter.name')
 	user_name = serializers.CharField(source='user.username')
+	links = LinkSerializer(read_only=True, many=True)
 	class Meta:
 		model = Entry
-		fields = ['chapter_name', 'date_start', 'date_end','text', 'user_name']
+		fields = ['chapter_name', 'date_start', 'date_end','text', 'user_name', 'links', 'grade']
 		#fields = [*]
 

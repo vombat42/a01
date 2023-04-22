@@ -1,5 +1,5 @@
 new Vue({
-	el: '#api_entry',
+	el: '#entry',
 	data: {
 		entrys:[]
 	},

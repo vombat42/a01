@@ -7,21 +7,43 @@
 {% block content %}
 
 {% verbatim %}
-<div class="container" id="api_entry">
+<div class="container" id="entry">
 	<div v-for="entry in entrys">
 
 		<div class="btn btn-success btn-lg" >{{entry.chapter_name}}</div>
-		<br/>
+		<br/><hr/>
 		<div class="btn btn-success btn-lg" >{{entry.user_name}}</div>
-		<br/>
-		<div class="btn btn-info btn-lg" >{{entry.date_start}}</div> 
+		<div class="btn btn-outline-dark" >{{entry.date_start}}</div> 
+		<div class="btn btn-outline-success" >{{entry.date_end}}</div> 
 		<br/>
 		<div class="btn btn-warning btn-lg" >{{entry.text}}</div>
+
+	<div class="accordion" id="accordionExample">
+  		<div class="accordion-item">
+    		<h2 class="accordion-header" id="headingOne">
+      			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        		Ссылки:
+      			</button>
+    		</h2>
+    		<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      			<div class="accordion-body">
+      				<div v-for="link in entry.links">
+						<a class="btn btn-outline-primary" :href="link['link']">{{link['link']}}</a>
+					</div>					
+      			</div>
+    		</div>
+    	</div>
+    </div>
+
+		<br/>
+		<div class="btn btn-warning btn-lg" >{{entry.grade}}</div>
 		<hr/>
 		<hr/>
 		
 	</div>
 </div>
+
+
 {% endverbatim %}
 
 <script src='/static/diary/js/app.js'></script>
