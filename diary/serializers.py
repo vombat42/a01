@@ -22,6 +22,6 @@ class EntrySerializer(ModelSerializer):
 	links = LinkSerializer(read_only=True, many=True)
 	class Meta:
 		model = Entry
-		fields = ['chapter_name', 'date_start', 'date_end','text', 'user_name', 'links', 'grade']
+		fields = ['id','chapter_name', 'date_start', 'date_end','text', 'user_name', 'links', 'grade']
 		#fields = [*]
 

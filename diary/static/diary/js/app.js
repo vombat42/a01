@@ -1,7 +1,8 @@
 new Vue({
 	el: '#entry',
 	data: {
-		entrys:[]
+		entrys:[],
+		links_count: 7,
 	},
 	created: function (){
 		const vm=this;

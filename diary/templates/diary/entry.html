@@ -10,36 +10,33 @@
 <div class="container" id="entry">
 	<div v-for="entry in entrys">
 
-		<div class="btn btn-success btn-lg" >{{entry.chapter_name}}</div>
-		<br/><hr/>
-		<div class="btn btn-success btn-lg" >{{entry.user_name}}</div>
-		<div class="btn btn-outline-dark" >{{entry.date_start}}</div> 
-		<div class="btn btn-outline-success" >{{entry.date_end}}</div> 
+		<div class="btn btn-success btn-sm" >{{entry.chapter_name}}</div>
 		<br/>
-		<div class="btn btn-warning btn-lg" >{{entry.text}}</div>
-
-	<div class="accordion" id="accordionExample">
-  		<div class="accordion-item">
-    		<h2 class="accordion-header" id="headingOne">
-      			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        		Ссылки:
-      			</button>
-    		</h2>
-    		<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      			<div class="accordion-body">
-      				<div v-for="link in entry.links">
+		<div class="btn btn-outline-primary btn-sm" >автор:<strong> {{entry.user_name}}</strong></div>
+		<div class="btn btn-outline-dark btn-sm" >{{entry.date_start}}</div> 
+		<div class="btn btn-outline-success btn-sm" >{{entry.date_end}}</div> 
+		<br/>
+		<div class="btn btn-warning btn-lg" >
+			{{entry.text}}
+			<span class="badge bg-secondary">важность: <span style="color:yellow">{{entry.grade}}</span></span>
+		</div>
+		<br/><br/>
+		<div>
+			<a class="btn btn-primary position-relative btn-sm" data-bs-toggle="collapse" :href="'#collapseExample'+entry.id" role="button" aria-expanded="false" :aria-controls="'collapseExample'+entry.id">
+				Ссылки:
+				<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    				{{entry.links.length}}</span>
+ 			</a>
+			<div class="collapse" :id="'collapseExample'+entry.id">
+				<div class="card card-body">
+  					<div v-for="link in entry.links">
 						<a class="btn btn-outline-primary" :href="link['link']">{{link['link']}}</a>
-					</div>					
-      			</div>
-    		</div>
-    	</div>
-    </div>
+     				</div>
+  				</div>
+			</div>
+		</div>
 
-		<br/>
-		<div class="btn btn-warning btn-lg" >{{entry.grade}}</div>
-		<hr/>
-		<hr/>
-		
+	<hr/><hr/>
 	</div>
 </div>
 
