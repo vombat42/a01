@@ -1,0 +1,31 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #228B22;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url "diary:index" %}">
+      <img src="{% static "/img/diary1.png" %}" alt="" height="24" class="d-inline-block align-text-top">Diary
+    </a>
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url "diary:entry" %}">Entry</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url "diary:about" %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url "diary:about" %}">About</a>
+      </li>
+    </ul>
+
+    <form class="d-flex">
+      <div class="input-group w-200">
+        <input type="text" class="form-control" placeholder="Sorry, search is in dev now" aria-label="my search" aria-describedby="basic-addon1">
+        <span class="input-group-text" id="basic-addon1">
+          <button type="submit" class="btn btn-secondary"><i class="bi-search"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</nav>
+

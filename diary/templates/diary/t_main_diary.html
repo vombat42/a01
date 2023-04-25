@@ -3,21 +3,35 @@
 
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% block title %}Diary{% endblock title %}</title>
 	<link rel="stylesheet" href="{% static "/bootstrap5/css/bootstrap.min.css" %}"/>
 	<script src="{% static "/bootstrap5/js/bootstrap.bundle.min.js" %}"></script>
 	<script src="{% static "/vuejs/dev/vue.js" %}"></script>
 	<script src="{% static "/axios/axios.js" %}"></script>
+	<link href="{% static "/bootstrap5/font/bootstrap-icons.css" %}" rel="stylesheet">
 	
 	<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	
 	<link rel="stylesheet" href="{% static "/diary/css/styles.css" %}"/>
 	-->
 	<meta charset="utf-8" />
+	
 </head>
 <body>
-	<h2>{% block header %}Diary{% endblock header %}</h2>
-  <div>{% block content%}Diary{% endblock content %}</div>
-	<div></div>
-	<div class="btn btn-warning btn-lg"><a href="{% url "diary:index" %}">На главную Diary</a></div>
+	{% block header %}
+		{% include "diary/header_diary.html" %}
+	{% endblock header %}
+
+	<div style="background-image: url('{% static "/img/back3.png" %}')">
+		<br/>
+		{% block content%}Diary{% endblock content %}
+	</div>
+	{% block footer%}
+		<p>Тут будет футер</p>
+		<i class="bi-alarm"></i>
+	{% endblock footer %}
+
 </body>
 </html>

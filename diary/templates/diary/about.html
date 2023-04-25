@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Diary 01 - </title>
-    <meta charset="utf-8" />
-</head>
-<body>
-	<h2>О проекте DIARY</h2>
-	<p>{% now "N j, Y, P" %}</p>
-  <hr />
-  <div><a href="{% url "diary:index" %}">main Diary</a></div>
-</body>
-</html>
+{% extends "diary/t_main_diary.html" %}
+
+{% block title %}Entry{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    <h2>About Diyary</h2>
+    <hr />
+    <p>Это мой третий тренировочный проект на <strong>Django</strong>. В нем я прокачиваю скилы по фронтенду</p>
+
+{% endblock content %}
+
