@@ -6,41 +6,21 @@
 
 {% block content %}
 
-{% verbatim %}
-<div class="container" id="entry">
-	<div v-for="entry in entrys">
-		<div class="btn btn-success btn-sm" >{{entry.chapter_name}}</div>
-		<br/>
-		<div class="btn btn-outline-primary btn-sm" >автор:<strong> {{entry.user_name}}</strong></div>
-		<div class="btn btn-outline-dark btn-sm" >{{entry.date_start}}</div> 
-		<div class="btn btn-outline-success btn-sm" v-if="entry.date_end">статус: <strong>завершено {{entry.date_end}}</strong></div> 
-		<div class="btn btn-outline-danger btn-sm" v-else>статус: <strong>не завершено</strong></div> 
-		<br/>
-		<div class="btn btn-warning btn-lg" >
-			{{entry.text}}
-			<span class="badge bg-secondary">важность: <span style="color:yellow">{{entry.grade}}</span></span>
-		</div>
-		<br/><br/>
-		<div>
-			<a class="btn btn-primary position-relative btn-sm" data-bs-toggle="collapse" :href="'#collapseExample'+entry.id" role="button" aria-expanded="false" :aria-controls="'collapseExample'+entry.id">
-				Ссылки:
-				<span v-if="entry.links.length" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{entry.links.length}}</span>
-   				<span v-else class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">нет</span>
- 			</a>
-			<div v-if="entry.links.length" class="collapse" :id="'collapseExample'+entry.id">
-				<div class="card card-body">
-  					<div v-for="link in entry.links">
-						<a class="btn btn-sm btn-outline-primary fst-italic fs-6" :href="link['link']">{{link['link'].slice(0, 50)}}</a>
-     				</div>
-  				</div>
+	<div class="container-fluid m-0" style="">
+		<div class="row">
+			<div class="col col-sm-2">
+      			{% include "diary/entry_filter.html" %}	
+    		</div>
+			<div class="col col-lg-2-auto">
+				{% include "diary/entry_list.html" %}
 			</div>
+			<div class="col col-sm-2">
+				{% include "diary/entry_action.html" %}
+			</div>
+
 		</div>
-		<hr/>
 	</div>
-</div>
 
+	<script src='/static/diary/js/app.js'></script>
 
-{% endverbatim %}
-
-<script src='/static/diary/js/app.js'></script>
 {% endblock content %}
