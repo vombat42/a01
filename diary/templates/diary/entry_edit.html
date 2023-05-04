@@ -1,0 +1,26 @@
+{% extends "diary/t_main_diary.html" %}
+
+{% block title %}Entry{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container-fluid m-0" style="">
+		<div class="row">
+			<div class="col col-sm-2">
+      			{% include "diary/entry_filter.html" %}	
+    		</div>
+			<div class="col col-lg-2-auto">
+				{% include "diary/entry_list.html" %}
+			</div>
+			<div class="col col-sm-2">
+				{% include "diary/entry_action.html" %}
+			</div>
+
+		</div>
+	</div>
+
+	<script src='/static/diary/js/app.js'></script>
+
+{% endblock content %}
