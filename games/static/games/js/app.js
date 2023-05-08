@@ -1,14 +1,14 @@
 new Vue({
-	el: '#entry',
+	el: '#word',
 	data: {
-		entrys:[],
-		links_count: 7,
+		word:[],
 	},
 	created: function (){
 		const vm=this;
-		axios.get('/diary/api/entry')
+		axios.get('/games/api/words')
 		.then(function(response){
-			vm.entrys = response.data
+			vm.word = response.data[0]
+			console.log(vm.word)
 			//console.log(response.data)
 		})
 	}

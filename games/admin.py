@@ -1,3 +1,6 @@
 from django.contrib import admin
+from games.models import Letter, Chapter, Word
 
-# Register your models here.
+admin.site.register(Letter)
+admin.site.register(Chapter)
+admin.site.register(Word)
