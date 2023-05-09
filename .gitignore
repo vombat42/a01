@@ -1,5 +1,8 @@
 /db.sqlite3
 /manage.py
+1.bash
+2.bash
+.venv/
 /a01/settings.py
-/a01/__init__.py
-/a01/__pycache__/
+**/__init__.py
+**/__pycache__/**
