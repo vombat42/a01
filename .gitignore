@@ -5,4 +5,4 @@
 .venv/
 /a01/settings.py
 **/__init__.py
-**/__pycache__/**
+**/__pycache__/
