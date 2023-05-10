@@ -1,6 +1,6 @@
 from django.db import models
 
-path='../games/static/games/'
+path='games/'
 #path=''
 
 class Chapter(models.Model):

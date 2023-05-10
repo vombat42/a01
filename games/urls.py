@@ -3,6 +3,7 @@ from . import views
 from rest_framework.routers import SimpleRouter
 from games.views import WordAPI, LetterAPI
 
+
 app_name = 'games'
 
 router = SimpleRouter()
@@ -16,3 +17,4 @@ urlpatterns = [
 	path('words/', views.words, name='words'),
 ]
 urlpatterns += router.urls
+
