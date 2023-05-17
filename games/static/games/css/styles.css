@@ -1,3 +1,17 @@
-body{ font-family: Courier;}
-h2{color:green;}
-img{width:350px;}
+.letter{
+	text-align:center;
+	font-size:154px;
+	font-weight: 700;
+	float: left;
+	padding-left: 20px;
+}
+
+
+.letter-outliner{
+	color: transparent;
+	-webkit-text-stroke: 2px green;
+}
+
+.letter-color{
+	color: green;
+}

@@ -1,17 +1,32 @@
-{% load static %}
-
 
 {% verbatim %}
 
-<div class="container" id="word">
-		<div class="btn btn-success btn-lg" >слово:<strong>{{word.name}}</strong></div>
-		<audio controls src="/static/voice/хлеб.aac"></audio>
-		<audio controls src="/static/voice/%D1%85%D0%BB%D0%B5%D0%B1.aac"></audio>
-<!--
+<!-- <div id="bukva">
+	Счётчик: {{ counter }}
+</div> -->
 
--->
-		<audio controls src="../../media/games/voice/qwe.aac"></audio>
-    	<p>{{word.voice}}</p>
-<div>
+
+<div class="container" id="word" style="display:block;">
+	<div id="word_voice" class="btn btn-success btn-lg" v-on:click="audioplay(word.voice)">
+		слово:<strong>{{word.name}}</strong>
+	</div>
+	
+	<hr/>
+	<audio controls :src='word.voice'></audio>	
+	<div v-for="letter in word_of_letters">
+		<div class="letter letter-outliner" v-on:click="audioplay(letters[letter])" role="button">{{letter}}</div>
+	</div>
+	<div style="clear:both;"></div>
+
+	<div>
+		<p>{{word}}</p>
+	</div>
+	<div>
+		<p>{{word_of_letters}}</p>
+	</div>
+	<div>
+		<p>{{letters}}</p>
+	</div>
+</div>
 
 {% endverbatim %}

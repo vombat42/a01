@@ -5,15 +5,15 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% block title %}Games{% endblock title %}</title>
-	<link rel="stylesheet" href="{% static "/bootstrap5/css/bootstrap.min.css" %}"/>
-	<script src="{% static "/bootstrap5/js/bootstrap.bundle.min.js" %}"></script>
-	<script src="{% static "/vuejs/dev/vue.js" %}"></script>
-	<script src="{% static "/axios/axios.js" %}"></script>
-	<link href="{% static "/bootstrap5/font/bootstrap-icons.css" %}" rel="stylesheet">
-	
-	<!--
-	<link rel="stylesheet" href="{% static "/games/css/styles.css" %}"/>
-	-->
+	<link rel="stylesheet" href="{% static '/bootstrap5/css/bootstrap.min.css' %}"/>
+	<script src="{% static '/bootstrap5/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static '/vuejs/dev/vue.js' %}"></script>
+	<!-- <script src="https://unpkg.com/vue@next"></script> -->
+	<script src="{% static '/axios/axios.js' %}"></script>
+	<link href="{% static '/bootstrap5/font/bootstrap-icons.css' %}" rel="stylesheet">
+	<link rel="icon" href="{% static '/favicon.ico' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static '/games/css/styles.css' %}"/>
+
 	<meta charset="utf-8" />
 	
 </head>
@@ -22,14 +22,16 @@
 		{% include "games/header_games.html" %}
 	{% endblock header %}
 
-	<div style="background-image: url('{% static "/img/х.png" %}')">
+	<!-- <div style="background-image: url('{% static '/img/х.png'%}')"> -->
+	<div>
 		<br/>
 		{% block content%}Games{% endblock content %}
 	</div>
 	{% block footer%}
 		<i class="bi-alarm"></i>
 		Тут будет футер
+		<strong>{% static '/favicon.ico' %}</strong>
 	{% endblock footer %}
-
+	
 </body>
 </html>
