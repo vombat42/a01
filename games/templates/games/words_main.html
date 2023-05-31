@@ -10,23 +10,29 @@
 	<div id="word_voice" class="btn btn-success btn-lg" v-on:click="audioplay(word.voice)">
 		слово:<strong>{{word.name}}</strong>
 	</div>
-	
-	<hr/>
-	<audio controls :src='word.voice'></audio>	
-	<div v-for="letter in word_of_letters">
-		<div class="letter letter-outliner" v-on:click="audioplay(letters[letter])" role="button">{{letter}}</div>
+	<div v-for="letter in letters">
+		<div :ref="letter['id']" class="letter letter-outliner" v-on:click="audioplay(letter['voice'])" role="button">{{letter['name']}}</div>
 	</div>
 	<div style="clear:both;"></div>
 
 	<div>
-		<p>{{word}}</p>
+		<input  v-show=true v-focus id="enter" v-model="entered_letter" v-on:input="letter_is_enter()">
 	</div>
-	<div>
-		<p>{{word_of_letters}}</p>
+
+	<div id="goodforyou" v-if="theEnd">
+		<img :src="imgEnd" />
+	</div>
+
+
+<!-- 	<div>
+		<p>{{word}}</p>
 	</div>
 	<div>
 		<p>{{letters}}</p>
 	</div>
+	<div>
+		<p>{{voices}}</p>
+	</div> -->
 </div>
 
 {% endverbatim %}

@@ -18,12 +18,6 @@ class LetterSerializer(ModelSerializer):
 
 class WordSerializer(ModelSerializer):
 	letters = LetterSerializer(read_only=True, many=True)
-	# letter_name = serializers.CharField(source='letter.name')
-	# letter_voice = serializers.CharField(source='letter.voice')
-	# aaa = serializers.SerializerMethodField()
-	# def get_aaa(self, obj):
-	# 	return {'AaA':'333'}
-	
 	class Meta:
 		model = Word
 		fields = ['chapter','name','voice','letters']
